@@ -1,0 +1,18 @@
+IMPORTANT:
+
+These are by far NOT ALL job-scripts created in this project.
+I do not want to overload it. In reality, you have to image the content of "Brain-only-befImpFeat" for each of the following child folders:
+	Brain-and-SC/
+	- befImpFeat/
+	- aftImpFeat/
+	Brain-only/
+	- befImpFeat/
+	- aftImpFeat/
+	SC-only/
+	- befImpfFeat/
+	
+Legend:
+- SC ... Spinal Cord
+- befImpFeat ... before importance feature(selection)
+- aftImpFeat ... after importance feature(selection)
+- [other abbreviations are mentioned in the thesis]

@@ -1,0 +1,1 @@
+for sub in originalLocation/projectname/sub-*; do subname=$(basename "$sub"); echo "Processing $subname..."; mkdir -p "newLocation/projectname/$subname/anat";  cp "$sub"/ses-*/anat/*T1w.json "$sub"/ses-*/anat/*T1w.nii.gz "newLocation/projectname/$subname/anat/" 2>/dev/null && echo "Completed $subname" || echo "No files found for $subname";done

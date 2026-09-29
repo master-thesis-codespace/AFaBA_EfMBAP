@@ -1,0 +1,1 @@
+for a in somePath; do directory=$(dirname $a); base=$(basename $a .nii.gz); sct_process_segmentation -i ${directory}/${base}_seg.nii.gz -vert 1:4 -vertfile ${directory}/${base}_seg_labeled.nii.gz -perlevel 1 -o csa_perlevel.csv -qc ~/qc -o ${directory}/csa_perlevel.csv; done
