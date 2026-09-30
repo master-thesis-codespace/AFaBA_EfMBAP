@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HYPERPARAMETER TUNING: Brain-only Dataset (STD cleaned) - before important features</title>
+<style>
+* { box-sizing: border-box; }
+body {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    margin: 16px 20px;
+    color: #111;
+}
+h1 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+table {
+    border-collapse: collapse;
+    white-space: nowrap;
+    margin-bottom: 2px;
+}
+th, td {
+    border: 1px solid #bbb;
+    padding: 5px 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+th { background: #e8e8e8; font-weight: bold; }
+td.folder {
+    text-align: left;
+    font-family: monospace;
+    font-size: 11.5px;
+    color: #333;
+}
+tr.default-row td { background: #f3fff3; }
+.best-param  { color: #006400; font-weight: bold; }
+.metric-best  { font-weight: bold; }
+.metric-worse { color: #8b0000; }
+.metric-best.metric-worse { color: #8b0000; font-weight: bold; }
+</style>
+</head>
+<body>
+<h1>HYPERPARAMETER TUNING: Brain-only Dataset (STD cleaned) - before important features</h1>
+<table>
+<thead><tr><th>CatBoost</th><th>iterations</th><th>learning_rate</th><th>depth</th><th>l2_leaf_reg</th><th>min_data_in_leaf</th><th>early_stopping</th><th>OOF RMSE</th><th>OOF MAE</th><th>Test RMSE</th><th>Test MAE</th><th>GS duration</th></tr></thead>
+<tbody>
+<tr class="default-row"><td class="folder">BRAIN_CB_beImpFeat_STDcleaned-def/default</td><td>[<span class="best-param">1000</span>]</td><td>[<span class="best-param">0.03</span>]</td><td>[<span class="best-param">6</span>]</td><td>[<span class="best-param">3.0</span>]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td>7.0042</td><td>4.8257</td><td>7.0701</td><td>4.8996</td><td>—</td></tr>
+<tr><td class="folder">BRAIN_CB_beImpFeat_STDcleaned-GS1</td><td>[100, 1200, <span class="best-param">2400</span>]</td><td>[0.02, <span class="best-param">0.05</span>, 0.09]</td><td>[3, <span class="best-param">5</span>, 7]</td><td>[3.0, 5.0, <span class="best-param">7.0</span>]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td>6.8756</td><td>4.7786</td><td><span class="metric-best">6.8178</span></td><td><span class="metric-best">4.7459</span></td><td>0.68&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BRAIN_CB_beImpFeat_STDcleaned-GS2</td><td>[2400, 2800, <span class="best-param">3200</span>]</td><td>[<span class="best-param">0.03</span>, 0.05, 0.07]</td><td>[4, 5, <span class="best-param">6</span>]</td><td>[<span class="best-param">5.0</span>, 7.0, 9.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td>6.8431</td><td>4.7086</td><td><span class="metric-worse">6.9555</span></td><td><span class="metric-worse">4.8414</span></td><td>1.02&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BRAIN_CB_beImpFeat_STDcleaned-GS3</td><td>[3200, 3600, <span class="best-param">4000</span>]</td><td>[<span class="best-param">0.02</span>, 0.03, 0.04]</td><td>[<span class="best-param">5</span>, 6, 8]</td><td>[<span class="best-param">4.0</span>, 5.0, 6.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td>6.8206</td><td><span class="metric-worse">4.7107</span></td><td>6.8950</td><td>4.7895</td><td>2.65&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BRAIN_CB_beImpFeat_STDcleaned-GS4</td><td>[4000, 4000, <span class="best-param">4800</span>]</td><td>[0.01, 0.02, <span class="best-param">0.03</span>]</td><td>[<span class="best-param">4</span>, 5, 6]</td><td>[3.0, <span class="best-param">4.0</span>, 5.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td>6.8153</td><td><span class="metric-worse">4.7280</span></td><td>6.8455</td><td><span class="metric-worse">4.8011</span></td><td>1.29&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BRAIN_CB_beImpFeat_STDcleaned-GS5</td><td>[4800, 5200, <span class="best-param">5600</span>]</td><td>[<span class="best-param">0.02</span>, 0.03, 0.05]</td><td>[3, 4, <span class="best-param">5</span>]</td><td>[3.0, <span class="best-param">4.0</span>, 5.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td>6.8091</td><td>4.7018</td><td><span class="metric-worse">6.8788</span></td><td>4.7779</td><td>1.11&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BRAIN_CB_beImpFeat_STDcleaned-GS6</td><td>[5600, 6000, <span class="best-param">6400</span>]</td><td>[0.01, 0.02, <span class="best-param">0.03</span>]</td><td>[<span class="best-param">4</span>, 5, 7]</td><td>[3.0, <span class="best-param">4.0</span>, 5.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td><span class="metric-worse">6.8107</span></td><td><span class="metric-worse">4.7243</span></td><td>6.8308</td><td><span class="metric-worse">4.7894</span></td><td>3.15&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BRAIN_CB_beImpFeat_STDcleaned-GS7</td><td>[6400, 6800, <span class="best-param">7200</span>]</td><td>[<span class="best-param">0.02</span>, 0.03, 0.04]</td><td>[3, 4, <span class="best-param">5</span>]</td><td>[3.0, <span class="best-param">4.0</span>, 5.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td><span class="metric-best">6.8069</span></td><td><span class="metric-best">4.6999</span></td><td><span class="metric-worse">6.8747</span></td><td>4.7746</td><td>1.33&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BRAIN_CB_beImpFeat_STDcleaned-GS8</td><td>[7200, 7600, <span class="best-param">8000</span>]</td><td>[0.02, <span class="best-param">0.03</span>, 0.04]</td><td>[<span class="best-param">4</span>, 5, 6]</td><td>[3.0, <span class="best-param">4.0</span>, 5.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td><span class="metric-worse">6.8106</span></td><td><span class="metric-worse">4.7242</span></td><td>6.8297</td><td><span class="metric-worse">4.7884</span></td><td>2.63&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BRAIN_CB_beImpFeat_STDcleaned-GS9</td><td>[8000, 9000, <span class="best-param">10000</span>]</td><td>[0.02, <span class="best-param">0.03</span>, 0.04]</td><td>[3, <span class="best-param">4</span>, 5]</td><td>[3.0, <span class="best-param">4.0</span>, 5.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td>6.8106</td><td>4.7242</td><td>6.8297</td><td>4.7884</td><td>1.76&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BRAIN_CB_beImpFeat_STDcleaned-GS10</td><td>[10000, 14000, <span class="best-param">18000</span>]</td><td>[<span class="best-param">0.02</span>, 0.03, 0.04]</td><td>[3, <span class="best-param">4</span>, 5]</td><td>[3.0, 4.0, <span class="best-param">5.0</span>]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td><span class="metric-worse">6.8187</span></td><td><span class="metric-worse">4.7328</span></td><td><span class="metric-worse">6.8665</span></td><td><span class="metric-worse">4.8295</span></td><td>2.55&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BRAIN_CB_beImpFeat_STDcleaned-GS7_</td><td>[6400, 6800, <span class="best-param">7200</span>]</td><td>[<span class="best-param">0.02</span>, 0.03, 0.04]</td><td>[3, 4, <span class="best-param">5</span>]</td><td>[3.0, <span class="best-param">4.0</span>, 5.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td><span class="metric-best">6.8069</span></td><td><span class="metric-best">4.6999</span></td><td><span class="metric-worse">6.8747</span></td><td>4.7746</td><td>1.33&nbsp;hrs (405&nbsp;fits)</td></tr>
+</tbody>
+</table>
+</body>
+</html>

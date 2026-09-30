@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HYPERPARAMETER TUNING: Brain & SC Healthy Dataset CatBoost Individual - after important features</title>
+<style>
+* { box-sizing: border-box; }
+body {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    margin: 16px 20px;
+    color: #111;
+}
+h1 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+table {
+    border-collapse: collapse;
+    white-space: nowrap;
+    margin-bottom: 2px;
+}
+th, td {
+    border: 1px solid #bbb;
+    padding: 5px 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+th { background: #e8e8e8; font-weight: bold; }
+td.folder {
+    text-align: left;
+    font-family: monospace;
+    font-size: 11.5px;
+    color: #333;
+}
+tr.default-row td { background: #f3fff3; }
+.best-param  { color: #006400; font-weight: bold; }
+.metric-best  { font-weight: bold; }
+.metric-worse { color: #8b0000; }
+.metric-best.metric-worse { color: #8b0000; font-weight: bold; }
+</style>
+</head>
+<body>
+<h1>HYPERPARAMETER TUNING: Brain & SC Healthy Dataset CatBoost Individual - after important features</h1>
+<table>
+<thead><tr><th>CatBoost</th><th>iterations</th><th>learning_rate</th><th>depth</th><th>l2_leaf_reg</th><th>min_data_in_leaf</th><th>early_stopping</th><th>OOF RMSE</th><th>OOF MAE</th><th>Test RMSE</th><th>Test MAE</th><th>GS duration</th></tr></thead>
+<tbody>
+<tr class="default-row"><td class="folder">BOTH_CB_aftImpFeat_IND-def/default</td><td>[<span class="best-param">1000</span>]</td><td>[<span class="best-param">0.03</span>]</td><td>[<span class="best-param">6</span>]</td><td>[<span class="best-param">3.0</span>]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td>6.2035</td><td>4.2513</td><td>6.2585</td><td>4.3570</td><td>—</td></tr>
+<tr><td class="folder">BOTH_CB_aftImpFeat_IND-GS1</td><td>[100, 1200, <span class="best-param">2400</span>]</td><td>[0.02, <span class="best-param">0.05</span>, 0.09]</td><td>[3, <span class="best-param">5</span>, 9]</td><td>[6.0, <span class="best-param">10.0</span>, 12.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td>6.0624</td><td>4.1640</td><td>6.0635</td><td>4.2240</td><td>0.32&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BOTH_CB_aftImpFeat_IND-GS2</td><td>[2400, 2800, <span class="best-param">3200</span>]</td><td>[0.03, <span class="best-param">0.05</span>, 0.07]</td><td>[4, <span class="best-param">5</span>, 7]</td><td>[8.0, <span class="best-param">10.0</span>, 11.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td><span class="metric-best">6.0572</span></td><td><span class="metric-best">4.1601</span></td><td><span class="metric-best">6.0530</span></td><td><span class="metric-best">4.2168</span></td><td>0.41&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BOTH_CB_aftImpFeat_IND-GS3</td><td>[3000, 4000, <span class="best-param">5000</span>]</td><td>[0.04, <span class="best-param">0.05</span>, 0.06]</td><td>[4, <span class="best-param">5</span>, 6]</td><td>[9.0, <span class="best-param">10.0</span>, 11.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td><span class="metric-best">6.0572</span></td><td><span class="metric-best">4.1601</span></td><td><span class="metric-best">6.0530</span></td><td><span class="metric-best">4.2168</span></td><td>0.17&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BOTH_CB_aftImpFeat_IND-GS4</td><td>[6000, <span class="best-param">7000</span>, 8000]</td><td>[0.04, <span class="best-param">0.05</span>, 0.06]</td><td>[4, <span class="best-param">5</span>, 6]</td><td>[9.0, <span class="best-param">10.0</span>, 11.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td><span class="metric-best">6.0572</span></td><td><span class="metric-best">4.1601</span></td><td><span class="metric-best">6.0530</span></td><td><span class="metric-best">4.2168</span></td><td>0.34&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BOTH_CB_aftImpFeat_IND-GS5</td><td>[6500, 7000, <span class="best-param">7500</span>]</td><td>[0.04, <span class="best-param">0.05</span>, 0.06]</td><td>[4, <span class="best-param">5</span>, 6]</td><td>[9.0, <span class="best-param">10.0</span>, 11.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td><span class="metric-best">6.0572</span></td><td><span class="metric-best">4.1601</span></td><td><span class="metric-best">6.0530</span></td><td><span class="metric-best">4.2168</span></td><td>0.41&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BOTH_CB_aftImpFeat_IND-GS6</td><td>[7300, <span class="best-param">7500</span>, 7800]</td><td>[0.04, <span class="best-param">0.05</span>, 0.06]</td><td>[4, <span class="best-param">5</span>, 6]</td><td>[9.0, <span class="best-param">10.0</span>, 11.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td><span class="metric-best">6.0572</span></td><td><span class="metric-best">4.1601</span></td><td><span class="metric-best">6.0530</span></td><td><span class="metric-best">4.2168</span></td><td>0.96&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BOTH_CB_aftImpFeat_IND-GS7</td><td>[<span class="best-param">7400</span>, 7500, 7600]</td><td>[0.04, <span class="best-param">0.05</span>, 0.06]</td><td>[4, <span class="best-param">5</span>, 6]</td><td>[9.0, <span class="best-param">10.0</span>, 11.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td><span class="metric-best">6.0572</span></td><td><span class="metric-best">4.1601</span></td><td><span class="metric-best">6.0530</span></td><td><span class="metric-best">4.2168</span></td><td>1.32&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BOTH_CB_aftImpFeat_IND-GS8</td><td>[8000, 12000, <span class="best-param">16000</span>]</td><td>[0.04, <span class="best-param">0.05</span>, 0.06]</td><td>[4, <span class="best-param">5</span>, 6]</td><td>[9.0, <span class="best-param">10.0</span>, 11.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td><span class="metric-best">6.0572</span></td><td><span class="metric-best">4.1601</span></td><td><span class="metric-best">6.0530</span></td><td><span class="metric-best">4.2168</span></td><td>1.38&nbsp;hrs (405&nbsp;fits)</td></tr>
+</tbody>
+</table>
+<table>
+<thead><tr><th>CatBoost</th><th>iterations</th><th>learning_rate</th><th>depth</th><th>l2_leaf_reg</th><th>min_data_in_leaf</th><th>early_stopping</th><th>OOF RMSE</th><th>OOF MAE</th><th>Test RMSE</th><th>Test MAE</th><th>GS duration</th></tr></thead>
+<tbody>
+<tr class="default-row"><td class="folder">BOTH_CB_aftImpFeat_IND_GAF-def/default</td><td>[<span class="best-param">1000</span>]</td><td>[<span class="best-param">0.03</span>]</td><td>[<span class="best-param">6</span>]</td><td>[<span class="best-param">3.0</span>]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td>6.3284</td><td>4.3370</td><td>5.8132</td><td>4.0627</td><td>—</td></tr>
+<tr><td class="folder">BOTH_CB_aftImpFeat_IND_GAF-GS1</td><td>[100, 1200, <span class="best-param">2400</span>]</td><td>[0.02, <span class="best-param">0.05</span>, 0.09]</td><td>[3, <span class="best-param">5</span>, 9]</td><td>[6.0, <span class="best-param">10.0</span>, 12.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td>6.2028</td><td>4.2764</td><td>5.6039</td><td>3.9397</td><td>0.34&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BOTH_CB_aftImpFeat_IND_GAF-GS2</td><td>[2400, 2800, <span class="best-param">3200</span>]</td><td>[<span class="best-param">0.03</span>, 0.05, 0.07]</td><td>[4, <span class="best-param">5</span>, 7]</td><td>[<span class="best-param">8.0</span>, 10.0, 11.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td>6.1757</td><td>4.2524</td><td><span class="metric-worse">5.6074</span></td><td><span class="metric-best">3.8906</span></td><td>0.40&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BOTH_CB_aftImpFeat_IND_GAF-GS3</td><td>[3000, 4000, <span class="best-param">5000</span>]</td><td>[<span class="best-param">0.02</span>, 0.03, 0.04]</td><td>[4, 5, <span class="best-param">6</span>]</td><td>[5.0, 8.0, <span class="best-param">9.0</span>]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td>6.1564</td><td>4.2086</td><td><span class="metric-worse">5.6211</span></td><td><span class="metric-worse">3.9320</span></td><td>0.21&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BOTH_CB_aftImpFeat_IND_GAF-GS4</td><td>[5000, 6000, <span class="best-param">7000</span>]</td><td>[0.01, <span class="best-param">0.02</span>, 0.03]</td><td>[<span class="best-param">5</span>, 6, 8]</td><td>[<span class="best-param">8.0</span>, 9.0, 11.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td><span class="metric-worse">6.1658</span></td><td><span class="metric-worse">4.2301</span></td><td><span class="metric-worse">5.6471</span></td><td><span class="metric-worse">3.9893</span></td><td>0.88&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BOTH_CB_aftImpFeat_IND_GAF-GS5</td><td>[7000, 8000, <span class="best-param">9000</span>]</td><td>[0.01, <span class="best-param">0.02</span>, 0.03]</td><td>[3, 4, <span class="best-param">5</span>]</td><td>[3.0, 5.0, <span class="best-param">8.0</span>]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td>6.1658</td><td>4.2301</td><td>5.6471</td><td>3.9893</td><td>0.26&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BOTH_CB_aftImpFeat_IND_GAF-GS6</td><td>[9000, 10000, <span class="best-param">11000</span>]</td><td>[0.01, <span class="best-param">0.02</span>, 0.03]</td><td>[4, <span class="best-param">5</span>, 7]</td><td>[7.0, <span class="best-param">8.0</span>, 9.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td>6.1658</td><td>4.2301</td><td>5.6471</td><td>3.9893</td><td>1.47&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BOTH_CB_aftImpFeat_IND_GAF-GS7</td><td>[11000, 12000, <span class="best-param">13000</span>]</td><td>[<span class="best-param">0.01</span>, 0.02, 0.03]</td><td>[4, <span class="best-param">5</span>, 6]</td><td>[7.0, <span class="best-param">8.0</span>, 9.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td><span class="metric-best">6.1283</span></td><td><span class="metric-best">4.2065</span></td><td><span class="metric-best">5.5874</span></td><td>3.8966</td><td>1.58&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BOTH_CB_aftImpFeat_IND_GAF-GS8</td><td>[14000, 18000, <span class="best-param">22000</span>]</td><td>[<span class="best-param">0.01</span>, 0.02, 0.03]</td><td>[4, <span class="best-param">5</span>, 6]</td><td>[7.0, <span class="best-param">8.0</span>, 9.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td><span class="metric-best">6.1283</span></td><td><span class="metric-best">4.2065</span></td><td><span class="metric-best">5.5874</span></td><td>3.8966</td><td>2.06&nbsp;hrs (405&nbsp;fits)</td></tr>
+</tbody>
+</table>
+<table>
+<thead><tr><th>CatBoost</th><th>iterations</th><th>learning_rate</th><th>depth</th><th>l2_leaf_reg</th><th>min_data_in_leaf</th><th>early_stopping</th><th>OOF RMSE</th><th>OOF MAE</th><th>Test RMSE</th><th>Test MAE</th><th>GS duration</th></tr></thead>
+<tbody>
+<tr class="default-row"><td class="folder">BOTH_CB_aftImpFeat_IND_WMH-def/default</td><td>[<span class="best-param">1000</span>]</td><td>[<span class="best-param">0.03</span>]</td><td>[<span class="best-param">6</span>]</td><td>[<span class="best-param">3.0</span>]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td>6.2201</td><td>4.2889</td><td>6.1575</td><td>4.3320</td><td>—</td></tr>
+<tr><td class="folder">BOTH_CB_aftImpFeat_IND_WMH-GS1</td><td>[100, 1200, <span class="best-param">2400</span>]</td><td>[0.02, <span class="best-param">0.05</span>, 0.09]</td><td>[3, <span class="best-param">5</span>, 9]</td><td>[6.0, <span class="best-param">10.0</span>, 12.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td>6.1099</td><td>4.2402</td><td>6.1538</td><td><span class="metric-worse">4.3614</span></td><td>0.31&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BOTH_CB_aftImpFeat_IND_WMH-GS2</td><td>[2200, 2600, <span class="best-param">3000</span>]</td><td>[<span class="best-param">0.03</span>, 0.05, 0.07]</td><td>[4, <span class="best-param">5</span>, 7]</td><td>[8.0, 10.0, <span class="best-param">11.0</span>]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td>6.0733</td><td>4.2059</td><td>6.0775</td><td>4.2525</td><td>0.21&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BOTH_CB_aftImpFeat_IND_WMH-GS3</td><td>[3000, 3400, <span class="best-param">3800</span>]</td><td>[0.02, <span class="best-param">0.03</span>, 0.04]</td><td>[4, 5, <span class="best-param">6</span>]</td><td>[10.0, <span class="best-param">11.0</span>, 12.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td><span class="metric-best">6.0482</span></td><td><span class="metric-best">4.1540</span></td><td><span class="metric-best">5.9740</span></td><td><span class="metric-best">4.2326</span></td><td>0.52&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BOTH_CB_aftImpFeat_IND_WMH-GS4</td><td>[3800, 4200, <span class="best-param">4600</span>]</td><td>[0.02, <span class="best-param">0.03</span>, 0.04]</td><td>[<span class="best-param">5</span>, 6, 8]</td><td>[10.0, <span class="best-param">11.0</span>, 12.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td><span class="metric-worse">6.0662</span></td><td><span class="metric-worse">4.2012</span></td><td><span class="metric-worse">6.0738</span></td><td><span class="metric-worse">4.2480</span></td><td>0.85&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BOTH_CB_aftImpFeat_IND_WMH-GS5</td><td>[4600, 5000, <span class="best-param">5400</span>]</td><td>[0.02, <span class="best-param">0.03</span>, 0.04]</td><td>[2, <span class="best-param">5</span>, 6]</td><td>[10.0, <span class="best-param">11.0</span>, 12.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td>6.0662</td><td>4.2012</td><td>6.0738</td><td>4.2480</td><td>0.80&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BOTH_CB_aftImpFeat_IND_WMH-GS6</td><td>[5400, 5800, <span class="best-param">6200</span>]</td><td>[0.02, <span class="best-param">0.03</span>, 0.04]</td><td>[3, <span class="best-param">5</span>, 6]</td><td>[10.0, <span class="best-param">11.0</span>, 12.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td>6.0662</td><td>4.2012</td><td>6.0738</td><td>4.2480</td><td>0.24&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BOTH_CB_aftImpFeat_IND_WMH-GS7</td><td>[6200, 7200, <span class="best-param">8200</span>]</td><td>[0.02, <span class="best-param">0.03</span>, 0.04]</td><td>[3, <span class="best-param">5</span>, 6]</td><td>[10.0, <span class="best-param">11.0</span>, 12.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td>6.0662</td><td>4.2012</td><td>6.0738</td><td>4.2480</td><td>0.36&nbsp;hrs (405&nbsp;fits)</td></tr>
+<tr><td class="folder">BOTH_CB_aftImpFeat_IND_WMH-GS8</td><td>[8200, 12200, <span class="best-param">16200</span>]</td><td>[0.02, <span class="best-param">0.03</span>, 0.04]</td><td>[4, <span class="best-param">5</span>, 6]</td><td>[10.0, <span class="best-param">11.0</span>, 12.0]</td><td>[<span class="best-param">1</span>]</td><td>[<span class="best-param">100</span>]</td><td>6.0662</td><td>4.2012</td><td>6.0738</td><td>4.2480</td><td>0.63&nbsp;hrs (405&nbsp;fits)</td></tr>
+</tbody>
+</table>
+</body>
+</html>
